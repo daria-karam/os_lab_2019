@@ -1,0 +1,1048 @@
+daria@debian:~$ apt-get: sudo apt-get install git
+bash: apt-get:: command not found
+daria@debian:~$ sudo apt install git
+
+We trust you have received the usual lecture from the local System
+Administrator. It usually boils down to these three things:
+
+    #1) Respect the privacy of others.
+    #2) Think before you type.
+    #3) With great power comes great responsibility.
+
+[sudo] password for daria: 
+Sorry, try again.
+[sudo] password for daria: 
+Sorry, try again.
+[sudo] password for daria: 
+daria is not in the sudoers file.  This incident will be reported.
+daria@debian:~$ su apt install git
+su: user apt does not exist
+daria@debian:~$ sudo apt install git
+[sudo] password for daria: 
+Sorry, try again.
+[sudo] password for daria: 
+daria is not in the sudoers file.  This incident will be reported.
+daria@debian:~$ 
+daria@debian:~$ 
+daria@debian:~$ su
+Password: 
+root@debian:/home/daria# 
+root@debian:/home/daria# 
+root@debian:/home/daria# 
+root@debian:/home/daria# apt install git
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following additional packages will be installed:
+  git-man liberror-perl patch
+Suggested packages:
+  git-daemon-run | git-daemon-sysvinit git-doc git-el git-email git-gui gitk
+  gitweb git-cvs git-mediawiki git-svn ed diffutils-doc
+The following NEW packages will be installed:
+  git git-man liberror-perl patch
+0 upgraded, 4 newly installed, 0 to remove and 0 not upgraded.
+Need to get 7,397 kB of archives.
+After this operation, 38.2 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://ftp.ru.debian.org/debian buster/main amd64 liberror-perl all 0.17027-2 [30.9 kB]
+Get:2 http://ftp.ru.debian.org/debian buster/main amd64 git-man all 1:2.20.1-2+deb10u1 [1,620 kB]
+Get:3 http://ftp.ru.debian.org/debian buster/main amd64 git amd64 1:2.20.1-2+deb10u1 [5,620 kB]
+Get:4 http://ftp.ru.debian.org/debian buster/main amd64 patch amd64 2.7.6-3+deb10u1 [126 kB]
+Fetched 7,397 kB in 1s (5,481 kB/s)
+Selecting previously unselected package liberror-perl.
+(Reading database ... 129220 files and directories currently installed.)
+Preparing to unpack .../liberror-perl_0.17027-2_all.deb ...
+Unpacking liberror-perl (0.17027-2) ...
+Selecting previously unselected package git-man.
+Preparing to unpack .../git-man_1%3a2.20.1-2+deb10u1_all.deb ...
+Unpacking git-man (1:2.20.1-2+deb10u1) ...
+Selecting previously unselected package git.
+Preparing to unpack .../git_1%3a2.20.1-2+deb10u1_amd64.deb ...
+Unpacking git (1:2.20.1-2+deb10u1) ...
+Selecting previously unselected package patch.
+Preparing to unpack .../patch_2.7.6-3+deb10u1_amd64.deb ...
+Unpacking patch (2.7.6-3+deb10u1) ...
+Setting up liberror-perl (0.17027-2) ...
+Setting up patch (2.7.6-3+deb10u1) ...
+Setting up git-man (1:2.20.1-2+deb10u1) ...
+Setting up git (1:2.20.1-2+deb10u1) ...
+Processing triggers for man-db (2.8.5-2) ...
+root@debian:/home/daria# 
+root@debian:/home/daria# 
+root@debian:/home/daria# 
+root@debian:/home/daria# 
+root@debian:/home/daria# 
+root@debian:/home/daria# 
+root@debian:/home/daria# 
+root@debian:/home/daria# 
+root@debian:/home/daria# 
+root@debian:/home/daria# 
+root@debian:/home/daria# 
+root@debian:/home/daria# git --version
+git version 2.20.1
+root@debian:/home/daria# exit
+exit
+daria@debian:~$ 
+daria@debian:~$ 
+daria@debian:~$ 
+daria@debian:~$ cd ~/.ssh
+daria@debian:~/.ssh$ ls
+daria@debian:~/.ssh$ ls -a
+.  ..
+daria@debian:~/.ssh$ ssh-keygen -t rsa -b 4096
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/daria/.ssh/id_rsa): 
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /home/daria/.ssh/id_rsa.
+Your public key has been saved in /home/daria/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:jbkOYCzM/6tAg3pVXcZ/brFR3JyX6Cs6r5LsRfPaoXw daria@debian
+The key's randomart image is:
++---[RSA 4096]----+
+|         .o   .o+|
+|       . o.  . o*|
+|      . .  ..  ..|
+| + . .   +  ..+  |
+|. * =   So.  o.+ |
+|.. * .  ..o. .+  |
+|. o . o o..o..   |
+| . . . *oo+E.    |
+|    ..+oo==o     |
++----[SHA256]-----+
+daria@debian:~/.ssh$ ls -a
+.  ..  id_rsa  id_rsa.pub
+daria@debian:~/.ssh$ eval "$(ssh-agent -s)"
+Agent pid 3007
+daria@debian:~/.ssh$ git clone git@github.com:daria-karam/os_lab_2019.git
+Cloning into 'os_lab_2019'...
+The authenticity of host 'github.com (140.82.118.3)' can't be established.
+RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added 'github.com,140.82.118.3' (RSA) to the list of known hosts.
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+daria@debian:~/.ssh$ 
+daria@debian:~/.ssh$ 
+daria@debian:~/.ssh$ 
+daria@debian:~/.ssh$ 
+daria@debian:~/.ssh$ 
+daria@debian:~/.ssh$ ls -a
+.  ..  id_rsa  id_rsa.pub  known_hosts
+daria@debian:~/.ssh$ 
+daria@debian:~/.ssh$ 
+daria@debian:~/.ssh$ 
+daria@debian:~/.ssh$ 
+daria@debian:~/.ssh$ 
+daria@debian:~/.ssh$ 
+daria@debian:~/.ssh$ 
+daria@debian:~/.ssh$ 
+daria@debian:~/.ssh$ 
+daria@debian:~/.ssh$ 
+daria@debian:~/.ssh$ 
+daria@debian:~/.ssh$ 
+daria@debian:~/.ssh$ 
+daria@debian:~/.ssh$ 
+daria@debian:~/.ssh$ rm *
+daria@debian:~/.ssh$ 
+daria@debian:~/.ssh$ 
+daria@debian:~/.ssh$ 
+daria@debian:~/.ssh$ 
+daria@debian:~/.ssh$ ssh-keygen -t rsa -b 4096 -C "tirgi.mail@gmail.com"
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/daria/.ssh/id_rsa): 
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /home/daria/.ssh/id_rsa.
+Your public key has been saved in /home/daria/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:K6vhFLeB0AFtg8UugzduekBBxHL38HNP37ff2u/F1pc tirgi.mail@gmail.com
+The key's randomart image is:
++---[RSA 4096]----+
+|+o.*o            |
+|.oo.B.           |
+|.oo+.=           |
+|..=...+ . .      |
+|.o +o ooSo . .   |
+|. o  o o .. . ..+|
+| +  o o .      EB|
+|. .o . o       ++|
+| .  o..       .oO|
++----[SHA256]-----+
+daria@debian:~/.ssh$ 
+daria@debian:~/.ssh$ 
+daria@debian:~/.ssh$ ls -a
+.  ..  id_rsa  id_rsa.pub
+daria@debian:~/.ssh$ 
+daria@debian:~/.ssh$ 
+daria@debian:~/.ssh$ 
+daria@debian:~/.ssh$ 
+daria@debian:~/.ssh$ 
+daria@debian:~/.ssh$ 
+daria@debian:~/.ssh$ 
+daria@debian:~/.ssh$ 
+daria@debian:~/.ssh$ ls id_rsa.pub 
+id_rsa.pub
+daria@debian:~/.ssh$ 
+daria@debian:~/.ssh$ cat id_rsa.pub 
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCz0fmHvjLUPMJm3x0g7txQ2hxaItMtKm4YdhEttfEWED0uUk76NqF+rxVb61bN/W4RELF8aqmoHwq9mO/9SsLRcNsDks+Tf2FZTWxuiNCR8r+NUSCokWYFt+NwdqZ4PSzp9WBFW3TjoGs5j6Aml2eTli0aTW2aZOO/XdxsgB24KDYlj6Cuo/NeoR0DrDe05xZ86jSKmxiFgXIybhEDn99ADpNuyT7cquMeXyOSsDNWDFGczAKR+fFY2HmzvvPNdc/2SrJCS3lg+xzjps2BbSw+mNIZEuzwERCHuI+UUMDPzDLCPORZm//DRy0nqgQxwLOCcEgmL0uhfsKn7b9Mw3w3mEBpFcZ/G6MjwGJImLbnZVdXsw5yoHqXqPoSQsw/9iwq8arGn0FQUo9hW59x5HbwlaPKQ9LoEIfun0Y0h0VeP3mdz6BOvGWcQhJWSbGOt+CpcjCsBnPuXMNM0Z8Tv+zOQ/O8DxnL8xqkd01mrftTtPvC3KgTXYDJ4OdmoXHK3ImTrIv0uv21UHTW0dO7QQxJOavusSFlf9ts/gy7R0Ga0y2qk+3MsSFNVOOZ1jk88BN4vRP6V9I9y8v0YJ7vPL/WzH+m8Qr00dJRvrg2W9VTEXcoRWtCdWB8SHIo3UaeyeuxmV+Je3EX9mz3GDIZZL0Ax36jWU69EgmweZSUFBMNLQ== tirgi.mail@gmail.com
+daria@debian:~/.ssh$ 
+daria@debian:~/.ssh$ 
+daria@debian:~/.ssh$ 
+daria@debian:~/.ssh$ cd /home/daria/
+.cache/    Desktop/   Downloads/ .local/    Music/     Public/    Templates/
+.config/   Documents/ .gnupg/    .mozilla/  Pictures/  .ssh/      Videos/
+daria@debian:~/.ssh$ cd /home/daria/D
+Desktop/   Documents/ Downloads/ 
+daria@debian:~/.ssh$ cd /home/daria/D
+Desktop/   Documents/ Downloads/ 
+daria@debian:~/.ssh$ cd /home/daria/Desktop/
+daria@debian:~/Desktop$ 
+daria@debian:~/Desktop$ 
+daria@debian:~/Desktop$ 
+daria@debian:~/Desktop$ mkdir git_project
+daria@debian:~/Desktop$ 
+daria@debian:~/Desktop$ 
+daria@debian:~/Desktop$ 
+daria@debian:~/Desktop$ cd git_project/
+daria@debian:~/Desktop/git_project$ 
+daria@debian:~/Desktop/git_project$ 
+daria@debian:~/Desktop/git_project$ 
+daria@debian:~/Desktop/git_project$ 
+daria@debian:~/Desktop/git_project$ 
+daria@debian:~/Desktop/git_project$ 
+daria@debian:~/Desktop/git_project$ 
+daria@debian:~/Desktop/git_project$ 
+daria@debian:~/Desktop/git_project$ 
+daria@debian:~/Desktop/git_project$ 
+daria@debian:~/Desktop/git_project$ 
+daria@debian:~/Desktop/git_project$ 
+daria@debian:~/Desktop/git_project$ git clone git@github.com:daria-karam/os_lab_2019.git
+Cloning into 'os_lab_2019'...
+The authenticity of host 'github.com (140.82.118.4)' can't be established.
+RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added 'github.com,140.82.118.4' (RSA) to the list of known hosts.
+remote: Enumerating objects: 97, done.
+remote: Total 97 (delta 0), reused 0 (delta 0), pack-reused 97
+Receiving objects: 100% (97/97), 1.32 MiB | 2.00 MiB/s, done.
+Resolving deltas: 100% (7/7), done.
+daria@debian:~/Desktop/git_project$ 
+daria@debian:~/Desktop/git_project$ 
+daria@debian:~/Desktop/git_project$ 
+daria@debian:~/Desktop/git_project$ ls
+os_lab_2019
+daria@debian:~/Desktop/git_project$ 
+daria@debian:~/Desktop/git_project$ 
+daria@debian:~/Desktop/git_project$ 
+daria@debian:~/Desktop/git_project$ cd os_lab_2019/
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ ls
+lab0  lab1  lab2  lab3  lab4  lab5  lab6  lab7  README.md  update.sh
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ ls
+lab0  lab1  lab2  lab3  lab4  lab5  lab6  lab7  README.md  update.sh
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ mkdir test_folder
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ git status 
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ git add test_folder/
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ git status 
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ ls
+lab0  lab2  lab4  lab6  README.md    update.sh
+lab1  lab3  lab5  lab7  test_folder
+daria@debian:~/Desktop/git_project/os_lab_2019$ cd test_folder/
+daria@debian:~/Desktop/git_project/os_lab_2019/test_folder$ 
+daria@debian:~/Desktop/git_project/os_lab_2019/test_folder$ 
+daria@debian:~/Desktop/git_project/os_lab_2019/test_folder$ 
+daria@debian:~/Desktop/git_project/os_lab_2019/test_folder$ touch test_file
+daria@debian:~/Desktop/git_project/os_lab_2019/test_folder$ 
+daria@debian:~/Desktop/git_project/os_lab_2019/test_folder$ 
+daria@debian:~/Desktop/git_project/os_lab_2019/test_folder$ 
+daria@debian:~/Desktop/git_project/os_lab_2019/test_folder$ 
+daria@debian:~/Desktop/git_project/os_lab_2019/test_folder$ cd ..
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ git add test_folder/test_file 
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ git status 
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	new file:   test_folder/test_file
+
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ git commit 
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'daria@debian.(none)')
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ git config --global user.email tirgi.mail@gmail.com
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ git config user.name daria-karam
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ git commit 
+[master fa82684] test commit
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 test_folder/test_file
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ git status 
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ git push 
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (4/4), 321 bytes | 321.00 KiB/s, done.
+Total 4 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To github.com:daria-karam/os_lab_2019.git
+   0522f38..fa82684  master -> master
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ git sta
+stage    stash    status   
+daria@debian:~/Desktop/git_project/os_lab_2019$ git status 
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ ls
+lab0  lab2  lab4  lab6  README.md    update.sh
+lab1  lab3  lab5  lab7  test_folder
+daria@debian:~/Desktop/git_project/os_lab_2019$ rm test_folder
+rm: cannot remove 'test_folder': Is a directory
+daria@debian:~/Desktop/git_project/os_lab_2019$ rmdir test_folder
+rmdir: failed to remove 'test_folder': Directory not empty
+daria@debian:~/Desktop/git_project/os_lab_2019$ rmdir -f test_folder
+rmdir: invalid option -- 'f'
+Try 'rmdir --help' for more information.
+daria@debian:~/Desktop/git_project/os_lab_2019$ rmdir -r test_folder
+rmdir: invalid option -- 'r'
+Try 'rmdir --help' for more information.
+daria@debian:~/Desktop/git_project/os_lab_2019$ rmdir --help
+Usage: rmdir [OPTION]... DIRECTORY...
+Remove the DIRECTORY(ies), if they are empty.
+
+      --ignore-fail-on-non-empty
+                  ignore each failure that is solely because a directory
+                    is non-empty
+  -p, --parents   remove DIRECTORY and its ancestors; e.g., 'rmdir -p a/b/c' is
+                    similar to 'rmdir a/b/c a/b a'
+  -v, --verbose   output a diagnostic for every directory processed
+      --help     display this help and exit
+      --version  output version information and exit
+
+GNU coreutils online help: <https://www.gnu.org/software/coreutils/>
+Full documentation at: <https://www.gnu.org/software/coreutils/rmdir>
+or available locally via: info '(coreutils) rmdir invocation'
+daria@debian:~/Desktop/git_project/os_lab_2019$ rm -r test_folder/
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ 
+daria@debian:~/Desktop/git_project/os_lab_2019$ ls
+lab0  lab1  lab2  lab3  lab4  lab5  lab6  lab7  README.md  update.sh
+daria@debian:~/Desktop/git_project/os_lab_2019$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	deleted:    test_folder/test_file
+
+no changes added to commit (use "git add" and/or "git commit -a")
+daria@debian:~/Desktop/git_project/os_lab_2019$ git add
+Nothing specified, nothing added.
+Maybe you wanted to say 'git add .'?
+daria@debian:~/Desktop/git_project/os_lab_2019$ git add --help
+daria@debian:~/Desktop/git_project/os_lab_2019$ git add .
+daria@debian:~/Desktop/git_project/os_lab_2019$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	deleted:    test_folder/test_file
+
+daria@debian:~/Desktop/git_project/os_lab_2019$ ls
+lab0  lab1  lab2  lab3  lab4  lab5  lab6  lab7  README.md  update.sh
+daria@debian:~/Desktop/git_project/os_lab_2019$ cd lab0
+daria@debian:~/Desktop/git_project/os_lab_2019/lab0$ mkdir hello
+daria@debian:~/Desktop/git_project/os_lab_2019/lab0$ touch empty
+daria@debian:~/Desktop/git_project/os_lab_2019/lab0$ ls
+empty  hello  src  text
+daria@debian:~/Desktop/git_project/os_lab_2019/lab0$ rm empty
+daria@debian:~/Desktop/git_project/os_lab_2019/lab0$ ls
+hello  src  text
+daria@debian:~/Desktop/git_project/os_lab_2019/lab0$ cd hello
+daria@debian:~/Desktop/git_project/os_lab_2019/lab0/hello$ touch empty
+daria@debian:~/Desktop/git_project/os_lab_2019/lab0/hello$ cd os_lab_2019
+bash: cd: os_lab_2019: No such file or directory
+daria@debian:~/Desktop/git_project/os_lab_2019/lab0/hello$ cd lab0
+bash: cd: lab0: No such file or directory
+daria@debian:~/Desktop/git_project/os_lab_2019/lab0/hello$ cd..
+bash: cd..: command not found
+daria@debian:~/Desktop/git_project/os_lab_2019/lab0/hello$ cd-
+bash: cd-: command not found
+daria@debian:~/Desktop/git_project/os_lab_2019/lab0/hello$ cd
+daria@debian:~$ cd Desktop/git_project/os_labs_2019
+bash: cd: Desktop/git_project/os_labs_2019: No such file or directory
+daria@debian:~$ cd ~/Desktop/git_project/os_labs_2019
+bash: cd: /home/daria/Desktop/git_project/os_labs_2019: No such file or directory
+daria@debian:~$ ^C
+daria@debian:~$ ^C
+daria@debian:~$ cd home
+bash: cd: home: No such file or directory
+daria@debian:~$ cd /home
+daria@debian:/home$ cd /daria/Desktop/git_project_os_labs_2019
+bash: cd: /daria/Desktop/git_project_os_labs_2019: No such file or directory
+daria@debian:/home$ cd /daria/Desktop/git_project/os_labs_2019
+bash: cd: /daria/Desktop/git_project/os_labs_2019: No such file or directory
+daria@debian:/home$ ^C
+daria@debian:/home$ cd /daria
+bash: cd: /daria: No such file or directory
+daria@debian:/home$ ls
+daria
+daria@debian:/home$ cd daria
+daria@debian:~$ ls
+Desktop  Documents  Downloads  Music  Pictures  Public  Templates  Videos
+daria@debian:~$ cd Desktop
+daria@debian:~/Desktop$ ls
+git_project
+daria@debian:~/Desktop$ cd git_project
+daria@debian:~/Desktop/git_project$ cd os_labs_2019
+bash: cd: os_labs_2019: No such file or directory
+daria@debian:~/Desktop/git_project$ ls
+os_lab_2019
+daria@debian:~/Desktop/git_project$ cd os_lab_2019
+daria@debian:~/Desktop/git_project/os_lab_2019$ cd lab0
+daria@debian:~/Desktop/git_project/os_lab_2019/lab0$ ls
+hello  src  text
+daria@debian:~/Desktop/git_project/os_lab_2019/lab0$ mv hello/empty src
+daria@debian:~/Desktop/git_project/os_lab_2019/lab0$ ls
+hello  src  text
+daria@debian:~/Desktop/git_project/os_lab_2019/lab0$ cd ..
+daria@debian:~/Desktop/git_project/os_lab_2019$ cd lab0
+daria@debian:~/Desktop/git_project/os_lab_2019/lab0$ cd hello
+daria@debian:~/Desktop/git_project/os_lab_2019/lab0/hello$ ls
+daria@debian:~/Desktop/git_project/os_lab_2019/lab0/hello$ cd ..
+daria@debian:~/Desktop/git_project/os_lab_2019/lab0$ cd src
+daria@debian:~/Desktop/git_project/os_lab_2019/lab0/src$ ls
+empty  hello.c
+daria@debian:~/Desktop/git_project/os_lab_2019/lab0/src$ rename 's/empty/newhello.c' files
+bash: rename: command not found
+daria@debian:~/Desktop/git_project/os_lab_2019/lab0/src$ mv empty newhello.c
+daria@debian:~/Desktop/git_project/os_lab_2019/lab0/src$ ls
+hello.c  newhello.c
+daria@debian:~/Desktop/git_project/os_lab_2019/lab0/src$ cd ..
+daria@debian:~/Desktop/git_project/os_lab_2019/lab0$ cd ..
+daria@debian:~/Desktop/git_project/os_lab_2019$ cd ..
+daria@debian:~/Desktop/git_project$ cd os_lab_2019
+daria@debian:~/Desktop/git_project/os_lab_2019$ git add lab0/src/hello/empty
+fatal: pathspec 'lab0/src/hello/empty' did not match any files
+daria@debian:~/Desktop/git_project/os_lab_2019$ cd lab0/src
+daria@debian:~/Desktop/git_project/os_lab_2019/lab0/src$ ls
+hello.c  newhello.c
+daria@debian:~/Desktop/git_project/os_lab_2019/lab0/src$ rm newhello.c
+daria@debian:~/Desktop/git_project/os_lab_2019/lab0/src$ ls
+hello.c
+daria@debian:~/Desktop/git_project/os_lab_2019/lab0/src$ cd ..
+daria@debian:~/Desktop/git_project/os_lab_2019/lab0$ cd ..
+daria@debian:~/Desktop/git_project/os_lab_2019$ cd lab0
+daria@debian:~/Desktop/git_project/os_lab_2019/lab0$ ls
+hello  src  text
+daria@debian:~/Desktop/git_project/os_lab_2019/lab0$ cd hello
+daria@debian:~/Desktop/git_project/os_lab_2019/lab0/hello$ touch empty
+daria@debian:~/Desktop/git_project/os_lab_2019/lab0/hello$ ls
+empty
+daria@debian:~/Desktop/git_project/os_lab_2019/lab0/hello$ cd ..
+daria@debian:~/Desktop/git_project/os_lab_2019/lab0$ cd ..
+daria@debian:~/Desktop/git_project/os_lab_2019$ git ctatus
+git: 'ctatus' is not a git command. See 'git --help'.
+
+The most similar command is
+	status
+daria@debian:~/Desktop/git_project/os_lab_2019$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	deleted:    test_folder/test_file
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	lab0/hello/
+
+daria@debian:~/Desktop/git_project/os_lab_2019$ git add lab0/hello/empty
+daria@debian:~/Desktop/git_project/os_lab_2019$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	renamed:    test_folder/test_file -> lab0/hello/empty
+
+daria@debian:~/Desktop/git_project/os_lab_2019$ ls
+lab0  lab1  lab2  lab3  lab4  lab5  lab6  lab7  README.md  update.sh
+daria@debian:~/Desktop/git_project/os_lab_2019$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	renamed:    test_folder/test_file -> lab0/hello/empty
+
+daria@debian:~/Desktop/git_project/os_lab_2019$ git add lab0/hello
+daria@debian:~/Desktop/git_project/os_lab_2019$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	renamed:    test_folder/test_file -> lab0/hello/empty
+
+daria@debian:~/Desktop/git_project/os_lab_2019$ cd lab0
+daria@debian:~/Desktop/git_project/os_lab_2019/lab0$ mv src/hello.c hello
+daria@debian:~/Desktop/git_project/os_lab_2019/lab0$ ls
+hello  src  text
+daria@debian:~/Desktop/git_project/os_lab_2019/lab0$ cd hello
+daria@debian:~/Desktop/git_project/os_lab_2019/lab0/hello$ ls
+empty  hello.c
+daria@debian:~/Desktop/git_project/os_lab_2019/lab0/hello$ cd ..
+daria@debian:~/Desktop/git_project/os_lab_2019/lab0$ cp hello/hello.c src
+daria@debian:~/Desktop/git_project/os_lab_2019/lab0$ cd src
+daria@debian:~/Desktop/git_project/os_lab_2019/lab0/src$ ls
+hello.c
+daria@debian:~/Desktop/git_project/os_lab_2019/lab0/src$ cd ..
+daria@debian:~/Desktop/git_project/os_lab_2019/lab0$ cd hello
+daria@debian:~/Desktop/git_project/os_lab_2019/lab0/hello$ ls
+empty  hello.c
+daria@debian:~/Desktop/git_project/os_lab_2019/lab0/hello$ mv hello.c newhello.c
+daria@debian:~/Desktop/git_project/os_lab_2019/lab0/hello$ ls
+empty  newhello.c
+daria@debian:~/Desktop/git_project/os_lab_2019/lab0/hello$ git add lab0/src/hello/newhello.c
+fatal: pathspec 'lab0/src/hello/newhello.c' did not match any files
+daria@debian:~/Desktop/git_project/os_lab_2019/lab0/hello$ git add lab0/hello/newhello.c
+fatal: pathspec 'lab0/hello/newhello.c' did not match any files
+daria@debian:~/Desktop/git_project/os_lab_2019/lab0/hello$ cd ..
+daria@debian:~/Desktop/git_project/os_lab_2019/lab0$ cd ..
+daria@debian:~/Desktop/git_project/os_lab_2019$ git add lab0/hello/newhello.c
+daria@debian:~/Desktop/git_project/os_lab_2019$ git ctatus
+git: 'ctatus' is not a git command. See 'git --help'.
+
+The most similar command is
+	status
+daria@debian:~/Desktop/git_project/os_lab_2019$ gitsctatus
+bash: gitsctatus: command not found
+daria@debian:~/Desktop/git_project/os_lab_2019$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	renamed:    test_folder/test_file -> lab0/hello/empty
+	new file:   lab0/hello/newhello.c
+
+daria@debian:~/Desktop/git_project/os_lab_2019$ git reset HEAD test_folder/test_file
+Unstaged changes after reset:
+D	test_folder/test_file
+daria@debian:~/Desktop/git_project/os_lab_2019$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	new file:   lab0/hello/empty
+	new file:   lab0/hello/newhello.c
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	deleted:    test_folder/test_file
+
+daria@debian:~/Desktop/git_project/os_lab_2019$ git commit -m "add hello.c and empty".
+[master ac216f8] add hello.c and empty.
+ 2 files changed, 6 insertions(+)
+ create mode 100644 lab0/hello/empty
+ create mode 100755 lab0/hello/newhello.c
+daria@debian:~/Desktop/git_project/os_lab_2019$ get push
+bash: get: command not found
+daria@debian:~/Desktop/git_project/os_lab_2019$ git push
+Enumerating objects: 6, done.
+Counting objects: 100% (6/6), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 435 bytes | 435.00 KiB/s, done.
+Total 4 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To github.com:daria-karam/os_lab_2019.git
+   fa82684..ac216f8  master -> master
+daria@debian:~/Desktop/git_project/os_lab_2019$ ls
+lab0  lab1  lab2  lab3  lab4  lab5  lab6  lab7  README.md  update.sh
+daria@debian:~/Desktop/git_project/os_lab_2019$ update.sh
+bash: update.sh: command not found
+daria@debian:~/Desktop/git_project/os_lab_2019$ ./update.sh
+[sudo] password for daria: 
+Sorry, try again.
+[sudo] password for daria: 
+
+
+Sorry, try again.
+[sudo] password for daria: 
+
+sudo: 3 incorrect password attempts
+[sudo] password for daria: 
+
+Sorry, try again.
+[sudo] password for daria: 
+Sorry, try again.
+[sudo] password for daria: 
+daria is not in the sudoers file.  This incident will be reported.
+[sudo] password for daria: 
+Sorry, try again.
+[sudo] password for daria: 
+daria is not in the sudoers file.  This incident will be reported.
+[sudo] password for daria: 
+[sudo] password for daria: 
+[sudo] password for daria: 
+[sudo] password for daria: 
+[sudo] password for daria: 
+[sudo] password for daria: 
+daria@debian:~/Desktop/git_project/os_lab_2019$ ^C
+daria@debian:~/Desktop/git_project/os_lab_2019$ ^C
+daria@debian:~/Desktop/git_project/os_lab_2019$ su
+Password: 
+root@debian:/home/daria/Desktop/git_project/os_lab_2019# ./update.sh
+Get:1 http://security.debian.org/debian-security buster/updates InRelease [65.4 kB]
+Get:2 http://security.debian.org/debian-security buster/updates/main Sources [104 kB]
+Get:3 http://security.debian.org/debian-security buster/updates/main amd64 Packages [179 kB]
+Get:4 http://security.debian.org/debian-security buster/updates/main Translation-en [94.5 kB]
+Hit:5 http://ftp.ru.debian.org/debian buster InRelease        
+Hit:6 http://ftp.ru.debian.org/debian buster-updates InRelease                 
+Fetched 443 kB in 1s (301 kB/s)                               
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+All packages are up to date.
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+Calculating upgrade... Done
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+Note, selecting 'man-db' instead of 'man'
+man-db is already the newest version (2.8.5-2).
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+nano is already the newest version (3.2-3).
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following additional packages will be installed:
+  clang-format-7
+The following NEW packages will be installed:
+  clang-format clang-format-7
+0 upgraded, 2 newly installed, 0 to remove and 0 not upgraded.
+Need to get 528 kB of archives.
+After this operation, 1,646 kB of additional disk space will be used.
+Get:1 http://ftp.ru.debian.org/debian buster/main amd64 clang-format-7 amd64 1:7.0.1-8 [521 kB]
+Get:2 http://ftp.ru.debian.org/debian buster/main amd64 clang-format amd64 1:7.0-47 [7,456 B]
+Fetched 528 kB in 39s (13.4 kB/s)                                              
+Selecting previously unselected package clang-format-7.
+(Reading database ... 130164 files and directories currently installed.)
+Preparing to unpack .../clang-format-7_1%3a7.0.1-8_amd64.deb ...
+Unpacking clang-format-7 (1:7.0.1-8) ...
+Selecting previously unselected package clang-format.
+Preparing to unpack .../clang-format_1%3a7.0-47_amd64.deb ...
+Unpacking clang-format (1:7.0-47) ...
+Setting up clang-format-7 (1:7.0.1-8) ...
+Setting up clang-format (1:7.0-47) ...
+Processing triggers for man-db (2.8.5-2) ...
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+iputils-ping is already the newest version (3:20180629-2).
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following additional packages will be installed:
+  binutils binutils-common binutils-x86-64-linux-gnu gcc-8 libasan5
+  libbinutils libc-dev-bin libc6-dev libcc1-0 libgcc-8-dev libitm1 liblsan0
+  libmpx2 libtsan0 libubsan1 linux-libc-dev manpages-dev
+Suggested packages:
+  binutils-doc gcc-multilib make autoconf automake libtool flex bison gdb
+  gcc-doc gcc-8-multilib gcc-8-doc gcc-8-locales libgcc1-dbg libgomp1-dbg
+  libitm1-dbg libatomic1-dbg libasan5-dbg liblsan0-dbg libtsan0-dbg
+  libubsan1-dbg libmpx2-dbg libquadmath0-dbg glibc-doc
+The following NEW packages will be installed:
+  binutils binutils-common binutils-x86-64-linux-gnu gcc gcc-8 libasan5
+  libbinutils libc-dev-bin libc6-dev libcc1-0 libgcc-8-dev libitm1 liblsan0
+  libmpx2 libtsan0 libubsan1 linux-libc-dev manpages-dev
+0 upgraded, 18 newly installed, 0 to remove and 0 not upgraded.
+Need to get 23.7 MB of archives.
+After this operation, 104 MB of additional disk space will be used.
+Get:1 http://ftp.ru.debian.org/debian buster/main amd64 binutils-common amd64 2.31.1-16 [2,073 kB]
+5% [1 binutils-common 1,501 kB/2,073 kB 72%]                 21.6 kB/s 17min 8s^Croot@debian:/home/daria/Desktop/git_project/os_lab_2019# exit
+exit
+daria@debian:~/Desktop/git_project/os_lab_2019$ cd lab0
+daria@debian:~/Desktop/git_project/os_lab_2019/lab0$ ls
+hello  src  text
+daria@debian:~/Desktop/git_project/os_lab_2019/lab0$ cd hello
+daria@debian:~/Desktop/git_project/os_lab_2019/lab0/hello$ ls
+empty  newhello.c
+daria@debian:~/Desktop/git_project/os_lab_2019/lab0/hello$ gcc newhello.c -o hello_world
+bash: gcc: command not found
+daria@debian:~/Desktop/git_project/os_lab_2019/lab0/hello$ su
+Password: 
+root@debian:/home/daria/Desktop/git_project/os_lab_2019/lab0/hello# cd ..
+root@debian:/home/daria/Desktop/git_project/os_lab_2019/lab0# cd ..
+root@debian:/home/daria/Desktop/git_project/os_lab_2019# ./update.sh
+Hit:1 http://security.debian.org/debian-security buster/updates InRelease
+Hit:2 http://ftp.ru.debian.org/debian buster InRelease
+Hit:3 http://ftp.ru.debian.org/debian buster-updates InRelease
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+All packages are up to date.
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+Calculating upgrade... Done
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+Note, selecting 'man-db' instead of 'man'
+man-db is already the newest version (2.8.5-2).
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+nano is already the newest version (3.2-3).
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+clang-format is already the newest version (1:7.0-47).
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+iputils-ping is already the newest version (3:20180629-2).
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following additional packages will be installed:
+  binutils binutils-common binutils-x86-64-linux-gnu gcc-8 libasan5
+  libbinutils libc-dev-bin libc6-dev libcc1-0 libgcc-8-dev libitm1 liblsan0
+  libmpx2 libtsan0 libubsan1 linux-libc-dev manpages-dev
+Suggested packages:
+  binutils-doc gcc-multilib make autoconf automake libtool flex bison gdb
+  gcc-doc gcc-8-multilib gcc-8-doc gcc-8-locales libgcc1-dbg libgomp1-dbg
+  libitm1-dbg libatomic1-dbg libasan5-dbg liblsan0-dbg libtsan0-dbg
+  libubsan1-dbg libmpx2-dbg libquadmath0-dbg glibc-doc
+The following NEW packages will be installed:
+  binutils binutils-common binutils-x86-64-linux-gnu gcc gcc-8 libasan5
+  libbinutils libc-dev-bin libc6-dev libcc1-0 libgcc-8-dev libitm1 liblsan0
+  libmpx2 libtsan0 libubsan1 linux-libc-dev manpages-dev
+0 upgraded, 18 newly installed, 0 to remove and 0 not upgraded.
+Need to get 23.7 MB of archives.
+After this operation, 104 MB of additional disk space will be used.
+Get:1 http://ftp.ru.debian.org/debian buster/main amd64 binutils-common amd64 2.31.1-16 [2,073 kB]
+Get:2 http://ftp.ru.debian.org/debian buster/main amd64 libbinutils amd64 2.31.1-16 [478 kB]
+Get:3 http://ftp.ru.debian.org/debian buster/main amd64 binutils-x86-64-linux-gnu amd64 2.31.1-16 [1,823 kB]
+Get:4 http://ftp.ru.debian.org/debian buster/main amd64 binutils amd64 2.31.1-16 [56.8 kB]
+Get:5 http://ftp.ru.debian.org/debian buster/main amd64 libcc1-0 amd64 8.3.0-6 [46.6 kB]
+Get:6 http://ftp.ru.debian.org/debian buster/main amd64 libitm1 amd64 8.3.0-6 [27.7 kB]
+Get:7 http://ftp.ru.debian.org/debian buster/main amd64 libasan5 amd64 8.3.0-6 [362 kB]
+Get:8 http://ftp.ru.debian.org/debian buster/main amd64 liblsan0 amd64 8.3.0-6 [131 kB]
+Get:9 http://ftp.ru.debian.org/debian buster/main amd64 libtsan0 amd64 8.3.0-6 [283 kB]
+Get:10 http://ftp.ru.debian.org/debian buster/main amd64 libubsan1 amd64 8.3.0-6 [120 kB]
+Get:11 http://ftp.ru.debian.org/debian buster/main amd64 libmpx2 amd64 8.3.0-6 [11.4 kB]
+Get:12 http://ftp.ru.debian.org/debian buster/main amd64 libgcc-8-dev amd64 8.3.0-6 [2,298 kB]
+Get:13 http://ftp.ru.debian.org/debian buster/main amd64 gcc-8 amd64 8.3.0-6 [9,452 kB]
+Get:13 http://ftp.ru.debian.org/debian buster/main amd64 gcc-8 amd64 8.3.0-6 [9,452 kB]
+Get:13 http://ftp.ru.debian.org/debian buster/main amd64 gcc-8 amd64 8.3.0-6 [9,452 kB]
+Get:13 http://ftp.ru.debian.org/debian buster/main amd64 gcc-8 amd64 8.3.0-6 [9,452 kB]
+Get:13 http://ftp.ru.debian.org/debian buster/main amd64 gcc-8 amd64 8.3.0-6 [9,452 kB]
+Get:13 http://ftp.ru.debian.org/debian buster/main amd64 gcc-8 amd64 8.3.0-6 [9,452 kB]
+Get:13 http://ftp.ru.debian.org/debian buster/main amd64 gcc-8 amd64 8.3.0-6 [9,452 kB]
+Get:13 http://ftp.ru.debian.org/debian buster/main amd64 gcc-8 amd64 8.3.0-6 [9,452 kB]
+Get:13 http://ftp.ru.debian.org/debian buster/main amd64 gcc-8 amd64 8.3.0-6 [9,452 kB]
+Get:13 http://ftp.ru.debian.org/debian buster/main amd64 gcc-8 amd64 8.3.0-6 [9,452 kB]
+Get:14 http://ftp.ru.debian.org/debian buster/main amd64 gcc amd64 4:8.3.0-1 [5,196 B]
+Get:15 http://ftp.ru.debian.org/debian buster/main amd64 libc-dev-bin amd64 2.28-10 [275 kB]
+Get:16 http://ftp.ru.debian.org/debian buster/main amd64 linux-libc-dev amd64 4.19.98-1 [1,314 kB]
+Get:17 http://ftp.ru.debian.org/debian buster/main amd64 libc6-dev amd64 2.28-10 [2,691 kB]
+Get:18 http://ftp.ru.debian.org/debian buster/main amd64 manpages-dev all 4.16-2 [2,232 kB]
+Fetched 20.4 MB in 20min 43s (16.4 kB/s)                                       
+Selecting previously unselected package binutils-common:amd64.
+(Reading database ... 130197 files and directories currently installed.)
+Preparing to unpack .../00-binutils-common_2.31.1-16_amd64.deb ...
+Unpacking binutils-common:amd64 (2.31.1-16) ...
+Selecting previously unselected package libbinutils:amd64.
+Preparing to unpack .../01-libbinutils_2.31.1-16_amd64.deb ...
+Unpacking libbinutils:amd64 (2.31.1-16) ...
+Selecting previously unselected package binutils-x86-64-linux-gnu.
+Preparing to unpack .../02-binutils-x86-64-linux-gnu_2.31.1-16_amd64.deb ...
+Unpacking binutils-x86-64-linux-gnu (2.31.1-16) ...
+Selecting previously unselected package binutils.
+Preparing to unpack .../03-binutils_2.31.1-16_amd64.deb ...
+Unpacking binutils (2.31.1-16) ...
+Selecting previously unselected package libcc1-0:amd64.
+Preparing to unpack .../04-libcc1-0_8.3.0-6_amd64.deb ...
+Unpacking libcc1-0:amd64 (8.3.0-6) ...
+Selecting previously unselected package libitm1:amd64.
+Preparing to unpack .../05-libitm1_8.3.0-6_amd64.deb ...
+Unpacking libitm1:amd64 (8.3.0-6) ...
+Selecting previously unselected package libasan5:amd64.
+Preparing to unpack .../06-libasan5_8.3.0-6_amd64.deb ...
+Unpacking libasan5:amd64 (8.3.0-6) ...
+Selecting previously unselected package liblsan0:amd64.
+Preparing to unpack .../07-liblsan0_8.3.0-6_amd64.deb ...
+Unpacking liblsan0:amd64 (8.3.0-6) ...
+Selecting previously unselected package libtsan0:amd64.
+Preparing to unpack .../08-libtsan0_8.3.0-6_amd64.deb ...
+Unpacking libtsan0:amd64 (8.3.0-6) ...
+Selecting previously unselected package libubsan1:amd64.
+Preparing to unpack .../09-libubsan1_8.3.0-6_amd64.deb ...
+Unpacking libubsan1:amd64 (8.3.0-6) ...
+Selecting previously unselected package libmpx2:amd64.
+Preparing to unpack .../10-libmpx2_8.3.0-6_amd64.deb ...
+Unpacking libmpx2:amd64 (8.3.0-6) ...
+Selecting previously unselected package libgcc-8-dev:amd64.
+Preparing to unpack .../11-libgcc-8-dev_8.3.0-6_amd64.deb ...
+Unpacking libgcc-8-dev:amd64 (8.3.0-6) ...
+Selecting previously unselected package gcc-8.
+Preparing to unpack .../12-gcc-8_8.3.0-6_amd64.deb ...
+Unpacking gcc-8 (8.3.0-6) ...
+Selecting previously unselected package gcc.
+Preparing to unpack .../13-gcc_4%3a8.3.0-1_amd64.deb ...
+Unpacking gcc (4:8.3.0-1) ...
+Selecting previously unselected package libc-dev-bin.
+Preparing to unpack .../14-libc-dev-bin_2.28-10_amd64.deb ...
+Unpacking libc-dev-bin (2.28-10) ...
+Selecting previously unselected package linux-libc-dev:amd64.
+Preparing to unpack .../15-linux-libc-dev_4.19.98-1_amd64.deb ...
+Unpacking linux-libc-dev:amd64 (4.19.98-1) ...
+Selecting previously unselected package libc6-dev:amd64.
+Preparing to unpack .../16-libc6-dev_2.28-10_amd64.deb ...
+Unpacking libc6-dev:amd64 (2.28-10) ...
+Selecting previously unselected package manpages-dev.
+Preparing to unpack .../17-manpages-dev_4.16-2_all.deb ...
+Unpacking manpages-dev (4.16-2) ...
+Setting up manpages-dev (4.16-2) ...
+Setting up binutils-common:amd64 (2.31.1-16) ...
+Setting up linux-libc-dev:amd64 (4.19.98-1) ...
+Setting up libasan5:amd64 (8.3.0-6) ...
+Setting up libmpx2:amd64 (8.3.0-6) ...
+Setting up libubsan1:amd64 (8.3.0-6) ...
+Setting up libbinutils:amd64 (2.31.1-16) ...
+Setting up libc-dev-bin (2.28-10) ...
+Setting up libcc1-0:amd64 (8.3.0-6) ...
+Setting up liblsan0:amd64 (8.3.0-6) ...
+Setting up libitm1:amd64 (8.3.0-6) ...
+Setting up binutils-x86-64-linux-gnu (2.31.1-16) ...
+Setting up libtsan0:amd64 (8.3.0-6) ...
+Setting up binutils (2.31.1-16) ...
+Setting up libgcc-8-dev:amd64 (8.3.0-6) ...
+Setting up libc6-dev:amd64 (2.28-10) ...
+Setting up gcc-8 (8.3.0-6) ...
+Setting up gcc (4:8.3.0-1) ...
+Processing triggers for man-db (2.8.5-2) ...
+Processing triggers for libc-bin (2.28-10) ...
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following NEW packages will be installed:
+  dos2unix
+0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+Need to get 391 kB of archives.
+After this operation, 1,339 kB of additional disk space will be used.
+Get:1 http://ftp.ru.debian.org/debian buster/main amd64 dos2unix amd64 7.4.0-1 [391 kB]
+Fetched 391 kB in 0s (2,761 kB/s)
+Selecting previously unselected package dos2unix.
+(Reading database ... 134413 files and directories currently installed.)
+Preparing to unpack .../dos2unix_7.4.0-1_amd64.deb ...
+Unpacking dos2unix (7.4.0-1) ...
+Setting up dos2unix (7.4.0-1) ...
+Processing triggers for man-db (2.8.5-2) ...
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+Suggested packages:
+  libcunit1-doc
+The following NEW packages will be installed:
+  libcunit1 libcunit1-dev libcunit1-doc
+0 upgraded, 3 newly installed, 0 to remove and 0 not upgraded.
+Need to get 202 kB of archives.
+After this operation, 682 kB of additional disk space will be used.
+Get:1 http://ftp.ru.debian.org/debian buster/main amd64 libcunit1 amd64 2.1-3-dfsg-2+b12 [33.0 kB]
+Get:2 http://ftp.ru.debian.org/debian buster/main amd64 libcunit1-dev amd64 2.1-3-dfsg-2+b12 [63.0 kB]
+Get:3 http://ftp.ru.debian.org/debian buster/main amd64 libcunit1-doc all 2.1-3-dfsg-2 [106 kB]
+Fetched 202 kB in 0s (1,027 kB/s)      
+Selecting previously unselected package libcunit1:amd64.
+(Reading database ... 134514 files and directories currently installed.)
+Preparing to unpack .../libcunit1_2.1-3-dfsg-2+b12_amd64.deb ...
+Unpacking libcunit1:amd64 (2.1-3-dfsg-2+b12) ...
+Selecting previously unselected package libcunit1-dev.
+Preparing to unpack .../libcunit1-dev_2.1-3-dfsg-2+b12_amd64.deb ...
+Unpacking libcunit1-dev (2.1-3-dfsg-2+b12) ...
+Selecting previously unselected package libcunit1-doc.
+Preparing to unpack .../libcunit1-doc_2.1-3-dfsg-2_all.deb ...
+Unpacking libcunit1-doc (2.1-3-dfsg-2) ...
+Setting up libcunit1-doc (2.1-3-dfsg-2) ...
+Setting up libcunit1:amd64 (2.1-3-dfsg-2+b12) ...
+Setting up libcunit1-dev (2.1-3-dfsg-2+b12) ...
+Processing triggers for man-db (2.8.5-2) ...
+Processing triggers for libc-bin (2.28-10) ...
+root@debian:/home/daria/Desktop/git_project/os_lab_2019# ping ya.ru -c 5
+PING ya.ru (87.250.250.242) 56(84) bytes of data.
+64 bytes from ya.ru (87.250.250.242): icmp_seq=1 ttl=56 time=6.75 ms
+64 bytes from ya.ru (87.250.250.242): icmp_seq=2 ttl=56 time=7.67 ms
+64 bytes from ya.ru (87.250.250.242): icmp_seq=3 ttl=56 time=8.79 ms
+64 bytes from ya.ru (87.250.250.242): icmp_seq=4 ttl=56 time=7.73 ms
+64 bytes from ya.ru (87.250.250.242): icmp_seq=5 ttl=56 time=7.52 ms
+
+--- ya.ru ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 43ms
+rtt min/avg/max/mdev = 6.753/7.693/8.792/0.653 ms
+root@debian:/home/daria/Desktop/git_project/os_lab_2019# gcc -v
+Using built-in specs.
+COLLECT_GCC=gcc
+COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/8/lto-wrapper
+OFFLOAD_TARGET_NAMES=nvptx-none
+OFFLOAD_TARGET_DEFAULT=1
+Target: x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Debian 8.3.0-6' --with-bugurl=file:///usr/share/doc/gcc-8/README.Bugs --enable-languages=c,ada,c++,go,brig,d,fortran,objc,obj-c++ --prefix=/usr --with-gcc-major-version-only --program-suffix=-8 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-libmpx --enable-plugin --enable-default-pie --with-system-zlib --with-target-system-zlib --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+Thread model: posix
+gcc version 8.3.0 (Debian 8.3.0-6) 
+root@debian:/home/daria/Desktop/git_project/os_lab_2019# exit
+exit
+daria@debian:~/Desktop/git_project/os_lab_2019/lab0/hello$ gcc newhello.c -o hello_world
+daria@debian:~/Desktop/git_project/os_lab_2019/lab0/hello$ ls
+empty  hello_world  newhello.c
+daria@debian:~/Desktop/git_project/os_lab_2019/lab0/hello$ cd hello_world
+bash: cd: hello_world: Not a directory
+daria@debian:~/Desktop/git_project/os_lab_2019/lab0/hello$ ./hello_world
+Hello World!
+daria@debian:~/Desktop/git_project/os_lab_2019/lab0/hello$ ^C
+daria@debian:~/Desktop/git_project/os_lab_2019/lab0/hello$ 
+
