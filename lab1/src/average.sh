@@ -2,8 +2,8 @@ n=$#
 middle=0
 for (( i = 1; i <= n; i++ ))
 do
-middle=$[ $middle + ${i} ]
+middle=$[ middle + ${i} ]
 done
-middle=$[ $middle / $n ]
+middle=$[ middle / n ]
 echo $n
 echo $middle
