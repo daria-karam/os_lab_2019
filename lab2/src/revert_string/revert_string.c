@@ -10,7 +10,7 @@ void RevertString(char *str)
         //printf("%c\n", str[i]);
     }
     //printf("n: %d\n", n);
-    for (i = 0; i < (n+1)/2; i++)
+    for (i = 0; i < n/2; i++)
     {
         //printf("%c %c\n", str[i], str[n-i-1]);
         char between = str[i];
