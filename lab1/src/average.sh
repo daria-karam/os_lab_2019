@@ -1,9 +1,24 @@
-n=$#
+n=0
 middle=0
-for (( i = 1; i <= n; i++ ))
+
+if [ 0 -ne $# ]
+then
+while [ -n "$1" ]
 do
-middle=$[ middle + ${i} ]
+middle=$[ middle + $1 ]
+let "n += 1"
+shift
 done
+
+else
+while read LINE
+do
+middle=$[ middle + $LINE]
+let "n += 1"
+shift
+done
+fi
+
 middle=$[ middle / n ]
 echo $n
 echo $middle
