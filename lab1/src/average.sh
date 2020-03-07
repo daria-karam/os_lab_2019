@@ -3,22 +3,19 @@ middle=0
 
 if [ 0 -ne $# ]
 then
-while [ -n "$1" ]
-do
-middle=$[ middle + $1 ]
-let "n += 1"
-shift
-done
-
+    for params in $@
+    do
+    let "middle += params"
+    let "n += 1"
+    done
 else
-while read LINE
-do
-middle=$[ middle + $LINE]
-let "n += 1"
-shift
-done
+    while read LINE
+    do
+    let "middle += LINE"
+    let "n += 1"
+    done
 fi
 
-middle=$[ middle / n ]
+let "middle /= n"
 echo $n
 echo $middle
