@@ -16,7 +16,7 @@
 #include "find_min_max.h"
 #include "utils.h"
 
-void killing()
+void killing(int sig)
 {
   kill(-1, SIGKILL); //transmitting a signal SIGKILL to all processes except init
   printf("TIMEOUT\n"); //printing message about timeout expiration
