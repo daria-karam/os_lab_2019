@@ -16,7 +16,7 @@
 #include "find_min_max.h"
 #include "utils.h"
 
-void killing(int sig)
+void killing()
 {
   kill(-1, SIGKILL); //transmitting a signal SIGKILL to all processes except init
   printf("TIMEOUT\n"); //printing message about timeout expiration
@@ -35,8 +35,8 @@ int main(int argc, char **argv) {
     static struct option options[] = {{"seed", required_argument, 0, 0},
                                       {"array_size", required_argument, 0, 0},
                                       {"pnum", required_argument, 0, 0},
-                                      {"by_files", no_argument, 0, 'f'},
                                       {"timeout", required_argument, 0, 0},
+                                      {"by_files", no_argument, 0, 'f'},
                                       {0, 0, 0, 0}};
 
     int option_index = 0;
@@ -179,7 +179,6 @@ int main(int argc, char **argv) {
   {
     signal(SIGALRM, killing); //signal sent by the alarm clock (function killing after SIGALRM)
     alarm(timeout); // timeout for this signal(SIGALRM, killing)
-    wait(WNOHANG); //waiting for immediate return of control, if no child has completed execution
   }
 
   while (active_child_processes > 0) 
