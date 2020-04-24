@@ -9,6 +9,7 @@
 #include <sys/time.h>
 #include <sys/types.h>
 #include <sys/wait.h>
+#include <signal.h>
 
 #include <getopt.h>
 
@@ -17,8 +18,8 @@
 
 void killing(int sig)
 {
-  kill(-1, SIGKILL);
-  printf("TIMEOUT\n");
+  kill(-1, SIGKILL); //transmitting a signal SIGKILL to all processes except init
+  printf("TIMEOUT\n"); //printing message about timeout expiration
 }
 
 int main(int argc, char **argv) {
@@ -71,15 +72,15 @@ int main(int argc, char **argv) {
             }
             break;
           case 3:
-            with_files = true;
-            break;
-          case 4:
             timeout = atoi(optarg);
             if (timeout <= 0) //checking the timeout for positivity
             {
               printf("timeout is a positive number\n");
               return 1;
             }
+            break;
+          case 4:
+            with_files = true;
             break;
 
           defalut:
@@ -174,16 +175,15 @@ int main(int argc, char **argv) {
     }
   }
 
+  if (timeout > 0)
+  {
+    signal(SIGALRM, killing); //signal sent by the alarm clock (function killing after SIGALRM)
+    alarm(timeout); // timeout for this signal(SIGALRM, killing)
+    wait(WNOHANG); //waiting for immediate return of control, if no child has completed execution
+  }
+
   while (active_child_processes > 0) 
   {
-    //my code here
-    if(timeout>0)
-    {
-      signal(SIGALRM, killing);
-      alarm(timeout);
-      wait(WNOHANG);
-    }
-
     close(pipefd[1]);
     wait(NULL);
     active_child_processes -= 1;
