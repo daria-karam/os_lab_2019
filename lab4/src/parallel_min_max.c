@@ -16,16 +16,23 @@
 #include "find_min_max.h"
 #include "utils.h"
 
+pid_t* current_PID;
+int pnum;
 void killing(int sig)
 {
-  kill(-1, SIGKILL); //transmitting a signal SIGKILL to all processes except init
-  printf("TIMEOUT\n"); //printing message about timeout expiration
+  for (int i = 0; i < pnum; i++)
+  {
+    if (kill(current_PID[i], SIGKILL) == 0) //transmitting a signal SIGKILL to all processes except init
+    {
+      printf("PID: %d\tTIMEOUT, child process was killed\n",current_PID[i]); //printing message about timeout expiration
+    }
+  }
 }
 
 int main(int argc, char **argv) {
   int seed = -1;
   int array_size = -1;
-  int pnum = -1;
+  pnum = -1;
   int timeout = -1;
   bool with_files = false;
 
@@ -124,9 +131,12 @@ int main(int argc, char **argv) {
     int sub_array_length= array_size/pnum; //length of the sub-arrays
     int i;
 
+  current_PID = malloc(sizeof(pid_t)*pnum);
+
   for (i = 0; i < pnum; i++)
   {
     pid_t child_pid = fork();
+    current_PID[i] = child_pid;
     if (child_pid >= 0)
     {
       //successful fork
@@ -177,12 +187,14 @@ int main(int argc, char **argv) {
 
   if (timeout > 0)
   {
-    signal(SIGALRM, killing); //signal sent by the alarm clock (function killing after SIGALRM)
     alarm(timeout); // timeout for this signal(SIGALRM, killing)
+    signal(SIGALRM, killing); //signal sent by the alarm clock (function killing after SIGALRM)
+    sleep(1);
   }
-
+  
   while (active_child_processes > 0) 
   {
+    
     close(pipefd[1]);
     wait(NULL);
     active_child_processes -= 1;
