@@ -16,13 +16,13 @@
 #include "find_min_max.h"
 #include "utils.h"
 
-pid_t* current_PID;
+pid_t* current_PID; //array of PID of child processes
 int pnum;
 void killing(int sig)
 {
-  for (int i = 0; i < pnum; i++)
+  for (int i = 0; i < pnum; i++) //transmitting signal SIGKILL to all child processes in array current_PID
   {
-    if (kill(current_PID[i], SIGKILL) == 0) //transmitting a signal SIGKILL to all processes except init
+    if (kill(current_PID[i], SIGKILL) == 0)
     {
       printf("PID: %d\tTIMEOUT, child process was killed\n",current_PID[i]); //printing message about timeout expiration
     }
@@ -189,7 +189,7 @@ int main(int argc, char **argv) {
   {
     alarm(timeout); // timeout for this signal(SIGALRM, killing)
     signal(SIGALRM, killing); //signal sent by the alarm clock (function killing after SIGALRM)
-    sleep(1);
+    sleep(1);//maybe we'll wait for the timeout (or not)
   }
   
   while (active_child_processes > 0) 
