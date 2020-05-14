@@ -13,7 +13,10 @@
 #include <sys/types.h>
 
 #include <pthread.h>
+
 #include "libMultModulo.h"
+
+pthread_mutex_t mut = PTHREAD_MUTEX_INITIALIZER;
 
 struct Server {
   char ip[255];
@@ -192,7 +195,6 @@ int main(int argc, char **argv)
   uint64_t begin;
   uint64_t end;
   uint64_t answer = 1;
-  uint64_t *between_answers = calloc(servers_num, sizeof(uint64_t));
   
   ServArgs args[servers_num];
   pthread_t threads[servers_num];
@@ -221,13 +223,15 @@ int main(int argc, char **argv)
     args[i].mod = mod;
 
     pthread_create(&threads[i], NULL, WorkWithServer, (void *)&args[i]);
-
-    pthread_join(threads[i],(void**)&between_answers[i]);
   }
 
   for (uint64_t i = 0; i <servers_num; i++)
   {
-    answer =  MultModulo(answer, between_answers[i], mod);
+    pthread_mutex_lock(&mut);
+    int between_answer=0;
+    pthread_join(threads[i],(void**)&between_answer);
+    answer =  MultModulo(answer, between_answer, mod);
+    pthread_mutex_unlock(&mut);
   }
 
   printf("answer: %llu\n", answer);
